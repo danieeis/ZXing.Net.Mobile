@@ -127,7 +127,7 @@ namespace Sample.Forms
 			};
 			buttonScanContinuousCustomPage.Clicked += async delegate
 			{
-				var customContinuousScanPage = new ScannerScroll();
+				var customContinuousScanPage = new CustomContinuousScanPage();
 				await Navigation.PushAsync(customContinuousScanPage);
 			};
 
