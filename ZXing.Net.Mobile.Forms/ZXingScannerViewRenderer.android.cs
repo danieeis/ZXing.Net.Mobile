@@ -12,6 +12,7 @@ using Android.Widget;
 using ZXing.Mobile;
 using System.Threading.Tasks;
 using System.Linq.Expressions;
+using Android.Content;
 
 [assembly: ExportRenderer(typeof(ZXingScannerView), typeof(ZXingScannerViewRenderer))]
 namespace ZXing.Net.Mobile.Forms.Android
@@ -72,8 +73,8 @@ namespace ZXing.Net.Mobile.Forms.Android
 						return;
 					}
 				}
-
-				zxingSurface = new ZXingSurfaceView(Context as Activity, formsView.Options);
+				
+				zxingSurface = new ZXingSurfaceView(Context, formsView.Options);
 				zxingSurface.LayoutParameters = new LayoutParams(LayoutParams.MatchParent, LayoutParams.MatchParent);
 
 				base.SetNativeControl(zxingSurface);
@@ -83,6 +84,8 @@ namespace ZXing.Net.Mobile.Forms.Android
 
 				if (formsView.IsTorchOn)
 					zxingSurface.Torch(true);
+				
+				
 			}
 		}
 

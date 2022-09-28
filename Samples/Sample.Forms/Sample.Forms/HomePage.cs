@@ -17,6 +17,7 @@ namespace Sample.Forms
 		Button buttonScanContinuousCustomPage;
 		Button buttonScanCustomPage;
 		Button buttonGenerateBarcode;
+		Button buttonScanScrollPage;
 		
 
 		public HomePage() : base()
@@ -108,6 +109,17 @@ namespace Sample.Forms
 				await Navigation.PushAsync(customScanPage);
 			};
 
+			buttonScanScrollPage = new Button
+			{
+				Text = "Scan with Scroll Page",
+				AutomationId = "scanWithScrollPage",
+			};
+			buttonScanScrollPage.Clicked += async delegate
+			{
+				var customScrollPage = new ScannerScroll();
+				await Navigation.PushAsync(customScrollPage);
+			};
+
 			buttonScanContinuousCustomPage = new Button
 			{
 				Text = "Scan Continuously with Custom Page",
@@ -115,7 +127,7 @@ namespace Sample.Forms
 			};
 			buttonScanContinuousCustomPage.Clicked += async delegate
 			{
-				var customContinuousScanPage = new CustomContinuousScanPage();
+				var customContinuousScanPage = new ScannerScroll();
 				await Navigation.PushAsync(customContinuousScanPage);
 			};
 
@@ -135,6 +147,7 @@ namespace Sample.Forms
 			stack.Children.Add(buttonScanCustomOverlay);
 			stack.Children.Add(buttonScanContinuously);
 			stack.Children.Add(buttonScanCustomPage);
+			stack.Children.Add(buttonScanScrollPage);
 			stack.Children.Add(buttonScanContinuousCustomPage);
 			stack.Children.Add(buttonGenerateBarcode);
 

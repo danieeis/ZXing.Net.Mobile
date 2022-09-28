@@ -36,6 +36,8 @@ namespace ZXing.Net.Mobile.Forms.iOS
 
 		protected override async void OnElementChanged(ElementChangedEventArgs<ZXingBarcodeImageView> e)
 		{
+			if(Element is null) return;
+
 			formsView = Element;
 
 			if (formsView != null && imageView == null)

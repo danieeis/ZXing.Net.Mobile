@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" xmlns:zxing="clr-namespace:ZXing.Net.Mobile.Forms;assembly=ZXing.Net.Mobile.Forms"
+             x:Class="Sample.Forms.ScannerScroll">
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView>
+                <StackLayout>
+                    <Label Text="Titulo"
+                       FontSize="24"/>
+                    <BoxView Color="Blue"
+                         HeightRequest="1"
+                         HorizontalOptions="FillAndExpand"/>
+                    <Label Text="Escanee"
+                       HorizontalTextAlignment="Center"/>
+                    <Frame CornerRadius="20" BackgroundColor="Transparent" Padding="0" Margin="0" HorizontalOptions="Center" VerticalOptions="Start">
+                        <zxing:ZXingScannerView
+                        VerticalOptions="Start" HorizontalOptions="Center" 
+                        IsScanning="True" 
+                        IsAnalyzing="True"
+                        HeightRequest="220"
+                        WidthRequest="220"/>
+                    </Frame>
+                    <Button VerticalOptions="Start"  Text="Ingresar Manual"/>
+                    <ActivityIndicator VerticalOptions="Start" IsRunning="True" IsVisible="True" Color="Blue" HorizontalOptions="CenterAndExpand"/>
+                </StackLayout>
+            </ScrollView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

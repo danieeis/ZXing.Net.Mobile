@@ -38,6 +38,8 @@ namespace ZXing.Net.Mobile.Forms.Android
 
 		protected override void OnElementChanged(ElementChangedEventArgs<ZXingBarcodeImageView> e)
 		{
+			if(Element is null) return;
+
 			formsView = Element;
 
 			if (formsView != null && imageView == null)
